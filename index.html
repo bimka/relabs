@@ -22,7 +22,7 @@
 
         </p>
         <script>
-            var ws = new WebSocket("ws://./relabs:8000/ws");
+            var ws = new WebSocket("ws://./ws");
             ws.onmessage = function(event) {
                 
                 var messages = document.getElementById('messages');
