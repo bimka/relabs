@@ -17,7 +17,7 @@ async def get(request: Request):
         )
 
 
-@app.websocket("/wss")
+@app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     i = 0

@@ -22,7 +22,7 @@
 
         </p>
         <script>
-            var ws = new WebSocket("wss://localhost:8000/wss");
+            var ws = new WebSocket("ws://localhost:800/ws");
             ws.onmessage = function(event) {
                 
                 var messages = document.getElementById('messages');
