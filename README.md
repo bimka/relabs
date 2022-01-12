@@ -11,5 +11,5 @@
 [Мое резюме.](https://hh.ru/resume/337f62e0ff091ed12e0039ed1f367836764774)
 
 Контакты:
-📧: mintdragon@yandex.ru
-✈️: @bimkaa
+📧: [mintdragon@yandex.ru](mailto:mintdragon@yandex.ru)
+✈️: [@bimkaa](https://t.me/bimkaa)
