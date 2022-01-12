@@ -5,7 +5,7 @@
         <title>Relabs</title>
     </head>
     <body style="text-align: center;">
-        <img src="/static/dancing_cat.jpg" alt="Танцующий кот" height=300px 
+        <img src="/static/dancing_cat.jpg" alt="Изображение танцующего кота" height=300px 
         title="Картинка для привлечения внимания">
         <p>Если вы хотите что-то отправить на сервер, заполните форму ниже:</p>
         <form action="" onsubmit="sendMessage(event)">
@@ -22,7 +22,7 @@
 
         </p>
         <script>
-            var ws = new WebSocket("ws://localhost:8000/ws");
+            var ws = new WebSocket("ws://https://bimka.github.io/relabs//ws");
             ws.onmessage = function(event) {
                 
                 var messages = document.getElementById('messages');
