@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Relabs</title>
+    </head>
+    <body style="text-align: center;">
+        <img src="/static/dancing_cat.jpg" alt="Танцующий кот" height=300px 
+        title="Картинка для привлечения внимания">
+        <p>Если вы хотите что-то отправить на сервер, заполните форму ниже:</p>
+        <form action="" onsubmit="sendMessage(event)">
+            <input type="text" id="messageText">
+            <button>Отправить!</button>
+        </form>
+        <p id="messages"></p>
+        <hr>
+        <p>Спасибо за внимание!</p>
+        <p>Контакты:<br>
+            <a href="https://t.me/bimkaa">@bimkaa</a><br>
+            <a href="mailto:mintdragon@yandex.ru">mintdragon@yandex.ru</a><br>
+            <a href="https://hh.ru/resume/337f62e0ff091ed12e0039ed1f367836764774">hh.ru</a>
+
+        </p>
+        <script>
+            var ws = new WebSocket("ws://localhost:8000/ws");
+            ws.onmessage = function(event) {
+                
+                var messages = document.getElementById('messages');
+                var message = document.createElement('p');
+                var text_message_dict = JSON.parse(event.data);
+                var text_message = text_message_dict.num + ": " 
+                    + text_message_dict.text;
+                var content = document.createTextNode(text_message);
+                message.appendChild(content);
+                messages.appendChild(message);
+
+
+            }; 
+            function sendMessage(event) {
+                var input = {
+                    text: document.getElementById("messageText").value,
+                };
+                ws.send(JSON.stringify(input));
+                document.getElementById("messageText").value = '';
+                event.preventDefault();
+            }
+        </script>
+    </body>
+</html>
